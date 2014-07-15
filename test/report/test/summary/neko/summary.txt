@@ -1,0 +1,17 @@
+result:true
+count:7
+pass:7
+fail:0
+error:0
+ignore:0
+time:0.01300048828125
+
+#coverage:percent,count/total
+coverage:24%
+packages:100%,1/1
+files:100%,2/2
+classes:100%,2/2
+methods:66.67%,6/9
+statements:44.44%,8/18
+branches:8.33%,2/24
+lines:77.57%,325/419

@@ -1,0 +1,7 @@
+version=2.1.0
+src=src
+bin=build
+report=report
+hxml=test.hxml
+classPaths=../src
+coveragePackages=cartography,maths

@@ -22,6 +22,7 @@
   <build>
     <option directives="" />
     <option flashStrict="False" />
+    <option noInlineOnDebug="False" />
     <option mainClass="Main" />
     <option enabledebug="False" />
     <option additional="" />
@@ -45,7 +46,7 @@
   <postBuildCommand alwaysRun="False" />
   <!-- Other project options -->
   <options>
-    <option showHiddenPaths="False" />
+    <option showHiddenPaths="True" />
     <option testMovie="Custom" />
     <option testMovieCommand="" />
   </options>

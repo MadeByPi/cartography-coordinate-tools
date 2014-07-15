@@ -1,2 +1,4 @@
-/build
-/report/test-runner
+/test/build
+/test/report/test-runner
+/test/build/.temp
+/test/.temp
