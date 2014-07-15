@@ -14,5 +14,7 @@ A cross-platform library providing calculators and conversion tools for earthly 
 * http://movable-type.co.uk/scripts/latlong-gridref.html
 * http://movable-type.co.uk/scripts/latlong-convert-coords.html
 
-## Test
-Uses [munit](https://github.com/massiveinteractive/MassiveUnit/), with tests for JS, Flash, Neko, and C++ targets
+## Tests
+Uses [munit](https://github.com/massiveinteractive/MassiveUnit/), with tests and coverage for JS, Flash, Neko, and C++ targets
+
+`haxelib run munit test -coverage`

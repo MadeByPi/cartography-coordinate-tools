@@ -10,7 +10,7 @@
     <movie height="0" />
     <movie version="1" />
     <movie minorVersion="0" />
-    <movie platform="PHP" />
+    <movie platform="Neko" />
     <movie background="#FFFFFF" />
   </output>
   <!-- Other classes to be compiled into your SWF -->
@@ -41,7 +41,7 @@
     <hidden path="build\.temp" />
   </hiddenPaths>
   <!-- Executed before build -->
-  <preBuildCommand>haxelib run munit test</preBuildCommand>
+  <preBuildCommand>$(ProjectDir)\test\runtests.bat</preBuildCommand>
   <!-- Executed after build -->
   <postBuildCommand alwaysRun="False" />
   <!-- Other project options -->
