@@ -4,7 +4,7 @@ pass:7
 fail:0
 error:0
 ignore:0
-time:0.01900005340576172
+time:0.03800010681152344
 
 #coverage:percent,count/total
 coverage:45.33%

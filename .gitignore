@@ -2,3 +2,4 @@
 /test/report/test-runner
 /test/build/.temp
 /test/.temp
+/obj

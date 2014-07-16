@@ -1,0 +1,29 @@
+<project name="catrography-tools" default="runTests" basedir="../">
+	
+	<!-- configuration -->		
+	<property file="${basedir}/build/build.properties" />
+	
+	<!-- run the munit tests -->
+	<target name="runTests">
+		<echo>Running ${projectName} tests...</echo>
+		<exec executable="haxelib" dir="test" failonerror="true">
+		  <arg value="run"/>
+		  <arg value="munit"/>
+		  <arg value="test"/>
+		  <arg value="-coverage"/>
+		  <arg value="-browser"/><arg value="phantomjs"/> 
+		  <!--
+		  NOTE: I forked MUnit to add phantomjs as a browser target, you'll need to use that version for now if you want to run headless browser tests (js)
+		  https://github.com/mikedotalmond/MassiveUnit
+		  -->
+		</exec>
+		
+		<echo>Done!</echo>
+		
+		<fail message="One or more tests FAILED">
+			<condition>
+				<resourcecontains resource="${report.results}" substring="FAILED"/>
+			</condition>
+		</fail>
+	</target>
+</project>

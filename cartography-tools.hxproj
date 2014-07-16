@@ -41,12 +41,12 @@
     <hidden path="build\.temp" />
   </hiddenPaths>
   <!-- Executed before build -->
-  <preBuildCommand>$(ProjectDir)\test\runtests.bat</preBuildCommand>
+  <preBuildCommand>$(ProjectDir)\build\run.bat</preBuildCommand>
   <!-- Executed after build -->
   <postBuildCommand alwaysRun="False" />
   <!-- Other project options -->
   <options>
-    <option showHiddenPaths="True" />
+    <option showHiddenPaths="False" />
     <option testMovie="Custom" />
     <option testMovieCommand="" />
   </options>

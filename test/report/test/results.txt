@@ -1,5 +1,4 @@
 Tests PASSED under neko using summary client
 Tests PASSED under cpp using summary client
 Tests PASSED under js using summary client
-Tests PASSED under as3 using summary client
 END
