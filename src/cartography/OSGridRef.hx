@@ -1,7 +1,7 @@
 package cartography;
 
-import maths.Const;
-import maths.Util;
+import cartography.Const;
+import cartography.Util;
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
 /*  Ordnance Survey Grid Reference functions  (c) Chris Veness 2005-2012                          */
@@ -15,6 +15,8 @@ import maths.Util;
  * @param {Number} easting:  Easting in metres from OS false origin
  * @param {Number} northing: Northing in metres from OS false origin
  */
+
+#if jsModule @:keep @:expose('cartography.OSGridRef') #end
 class OSGridRef {
 	
 	public var easting	(default, null):Int;

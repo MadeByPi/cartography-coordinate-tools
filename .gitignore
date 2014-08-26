@@ -3,3 +3,6 @@
 /test/build/.temp
 /test/.temp
 /obj
+/src/Version.hx
+/bin/cartography-tools.js
+/bin/cartography-tools.min.js

@@ -22,6 +22,8 @@
 -cp src
 -js build/js_test.js
 
+-D jsModule
+
 --next
 
 ## Neko

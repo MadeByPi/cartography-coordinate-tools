@@ -4,8 +4,8 @@ import massive.munit.util.Timer;
 import massive.munit.Assert;
 import massive.munit.async.AsyncFactory;
 
-import maths.Const;
-import maths.Util;
+import cartography.Const;
+import cartography.Util;
 
 
 /**

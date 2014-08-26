@@ -1,7 +1,7 @@
 package cartography;
 
-import maths.Const;
-import maths.Util;
+import cartography.Const;
+import cartography.Util;
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
 /*  Geodesy representation conversion functions (c) Chris Veness 2002-2012                        */
@@ -19,6 +19,7 @@ enum GeoFormat {
 	DegreesMinutesSeconds;
 }
 
+#if jsModule @:keep @:expose('cartography.Geo') #end
 class Geo {
 	
 	static var DegreeSymbol		:String = "°";

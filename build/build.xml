@@ -1,7 +1,11 @@
-<project name="catrography-tools" default="runTests" basedir="../">
+<project name="catrography-tools" default="test-and-build" basedir="../">
 	
 	<!-- configuration -->		
 	<property file="${basedir}/build/build.properties" />
+	
+	<target name="test-and-build" depends="runTests,build-js-module">
+		<echo>runTests and build-js-module completed</echo>
+	</target>
 	
 	<!-- run the munit tests -->
 	<target name="runTests">
@@ -26,4 +30,47 @@
 			</condition>
 		</fail>
 	</target>
+	
+	
+	<target name="build-js-module" depends="build-js,wrap-js,minify-js">
+		<echo>Built ${projectName} js</echo>
+		<echo>${basedir}/bin/${projectName}.js</echo>
+		<echo>${basedir}/bin/${projectName}.min.js</echo>
+	</target>
+	
+	<target name="build-js">
+		<exec executable="haxe" dir="${basedir}" failonerror="true">
+			<!-- use compiler service -->
+			<arg value="--connect"/><arg value="6000"/>
+			<!-- main/document class -->
+			<arg value="-main"/><arg value="Main"/>
+			<!-- classpaths -->
+			<arg value="-cp"/><arg value="src"/>
+			<!-- flags -->
+			<arg value="-D"/><arg value="jsModule"/>
+			<!-- build -js output -->
+			<arg value="-js"/><arg value="${bin}/${projectName}.js"/>
+		</exec>
+		<echo>Done!</echo>
+	</target>
+	
+	<target name="wrap-js">
+		<exec executable="neko" dir="${basedir}" failonerror="true">
+			<arg value="${buildTools}/UMDWrap.n"/>
+			<arg value="-in"/><arg value="${bin}/${projectName}.js"/>
+			<arg value="-out"/><arg value="${bin}/${projectName}.js"/> <!-- overwrite it -->
+		</exec>
+		<echo>Done!</echo>
+	</target>
+	
+	<target name="minify-js">
+		<exec executable="java" failonerror="true">
+		  <arg value="-jar"/><arg value="${buildTools}/closure-compiler.jar"/>
+		  <arg value="--jscomp_off"/><arg value="uselessCode"/>
+		  <arg value="--js"/><arg value="${basedir}/bin/${projectName}.js"/>
+		  <arg value="--js_output_file"/><arg value="${basedir}/bin/${projectName}.min.js"/>
+		</exec>
+		<echo>Done!</echo>
+	</target>
+	
 </project>

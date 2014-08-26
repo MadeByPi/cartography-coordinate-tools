@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>cartography-tools | js example</title>
+</head>
+<body>
+	
+	<!-- Without AMD: Loading the module like this will add any exports to 'this' scope (for browsers, that's the window object). -->
+	<!-- script src="cartography-tools.js"></script-->
+	<script src="cartography-tools.min.js"></script>
+	<script>
+		console.log('global: loaded cartography-tools');
+		console.log(this);
+		console.log(this.cartography);
+	</script>
+	
+	
+	<!-- With AMD: Load again, this time after adding RequireJS to the page... -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.14/require.min.js"></script>
+	<script>
+		require(["cartography-tools.min"], function(module) {
+			console.log('require: loaded cartography-tools module');
+			
+			console.log(module.cartography);
+			// test / check some stuff...
+			
+			var Geo			= module.cartography.Geo,
+				LatLon		= module.cartography.LatLon,
+				OSGridRef	= module.cartography.OSGridRef,
+				Util		= module.cartography.Util;
+			
+			var lat = Geo.parseDMS("53°50′39.8498″N"), 
+				lon = Geo.parseDMS("001°30′48.5492″W");
+			
+			var latlon 	= new LatLon(lat,lon);
+			var gridRef = OSGridRef.latLongToOsGrid(latlon);
+			
+			var rLat 	= Util.roundToSF(lat, 8);
+			var rLong 	= Util.roundToSF(lon, 8);
+			
+			console.log("53°50′39.8498″N", "001°30′48.5492″W");
+			console.log(lat, lon);
+			console.log(latlon);
+			console.log(gridRef);
+		});
+	</script>
+</body>
+</html>

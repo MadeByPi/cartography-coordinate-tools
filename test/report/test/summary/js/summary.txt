@@ -4,7 +4,7 @@ pass:7
 fail:0
 error:0
 ignore:0
-time:0.03800010681152344
+time:0.03299999237060547
 
 #coverage:percent,count/total
 coverage:45.33%
@@ -14,4 +14,4 @@ classes:100%,2/2
 methods:88.89%,8/9
 statements:55.56%,10/18
 branches:8.33%,2/24
-lines:81.62%,342/419
+lines:81.75%,345/422

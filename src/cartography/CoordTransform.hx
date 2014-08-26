@@ -1,6 +1,7 @@
 package cartography;
-import maths.Const;
-import maths.Util;
+
+import cartography.Const;
+import cartography.Util;
 
 /**/
 
@@ -31,7 +32,7 @@ typedef DatumTransform = {
 	var s:Float;
 }
 
-
+#if jsModule @:keep @:expose('cartography.CoordTransform') #end
 class CoordTransform {
 
 	/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */

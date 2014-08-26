@@ -4,7 +4,7 @@ import cartography.CoordTransform;
 import cartography.Geo;
 import cartography.LatLon;
 import cartography.OSGridRef;
-import maths.Util;
+import cartography.Util;
 
 import massive.munit.Assert;
 

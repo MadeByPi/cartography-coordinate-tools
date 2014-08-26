@@ -4,13 +4,13 @@
   <output>
     <movie outputType="CustomBuild" />
     <movie input="" />
-    <movie path="bin\cartographytools.js" />
+    <movie path="bin\cartography-tools.js" />
     <movie fps="0" />
     <movie width="0" />
     <movie height="0" />
     <movie version="1" />
     <movie minorVersion="0" />
-    <movie platform="Neko" />
+    <movie platform="JavaScript" />
     <movie background="#FFFFFF" />
   </output>
   <!-- Other classes to be compiled into your SWF -->
@@ -25,7 +25,7 @@
     <option noInlineOnDebug="False" />
     <option mainClass="Main" />
     <option enabledebug="False" />
-    <option additional="" />
+    <option additional="-D jsModule" />
   </build>
   <!-- haxelib libraries -->
   <haxelib>
@@ -39,6 +39,7 @@
   <hiddenPaths>
     <hidden path="obj" />
     <hidden path="build\.temp" />
+    <hidden path="src\Version.hx" />
   </hiddenPaths>
   <!-- Executed before build -->
   <preBuildCommand>$(ProjectDir)\build\run.bat</preBuildCommand>

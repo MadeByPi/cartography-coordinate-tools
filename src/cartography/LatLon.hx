@@ -2,8 +2,8 @@ package cartography;
 
 import cartography.Geo;
 
-import maths.Const;
-import maths.Util;
+import cartography.Const;
+import cartography.Util;
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
 /*  Latitude/longitude spherical geodesy formulae & scripts (c) Chris Veness 2002-2012            */
@@ -30,6 +30,8 @@ import maths.Util;
  * @param {Float} lon: longitude in numeric degrees
  * @param {Float} [rad=6371]: radius of earth if different value is required from standard 6,371km
  */
+
+#if jsModule @:keep @:expose('cartography.LatLon') #end
 class LatLon {
 	
 	var radius:Float; // (earth) km

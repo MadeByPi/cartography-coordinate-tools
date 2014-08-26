@@ -6,8 +6,8 @@ import massive.munit.Assert;
 import massive.munit.util.Timer;
 import massive.munit.async.AsyncFactory;
 
-import maths.Const;
-import maths.Util;
+import cartography.Const;
+import cartography.Util;
 
 
 /**
@@ -56,7 +56,6 @@ class GeoTest {
 		
 		Assert.areEqual(rLong, -1.5134859);
 		Assert.areEqual(Util.roundToSF(rLong, 4), -1.513);
-		
 		
 		Assert.areEqual(Geo.toDMS( rLat, GeoFormat.Degrees), "053.84°");
 		Assert.areEqual(Geo.toDMS( rLat, GeoFormat.DegreesMinutes), "0053°50.7′");
