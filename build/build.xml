@@ -43,7 +43,7 @@
 			<!-- use compiler service -->
 			<arg value="--connect"/><arg value="6000"/>
 			<!-- main/document class -->
-			<arg value="-main"/><arg value="Main"/>
+			<arg value="-main"/><arg value="CartographyModuleMain"/>
 			<!-- classpaths -->
 			<arg value="-cp"/><arg value="src"/>
 			<!-- flags -->

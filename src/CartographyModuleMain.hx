@@ -12,7 +12,7 @@ package ;
  import cartography.OSGridRef;
  import cartography.CoordTransform;
  
-class Main {
+class CartographyModuleMain {
 
 	static function main() {
 		#if debug
