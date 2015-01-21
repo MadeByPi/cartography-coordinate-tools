@@ -38,7 +38,22 @@
 		<echo>${basedir}/bin/${projectName}.min.js</echo>
 	</target>
 	
-	<target name="build-js">
+	<target name="build-php">			
+		<!-- haxe -main CartographyModuleMain -cp src -php bin/php -->
+		<exec executable="haxe" dir="${basedir}" failonerror="true">
+			<!-- main/document class -->
+			<arg value="-main"/><arg value="CartographyModuleMain"/>
+			<!-- classpaths -->
+			<arg value="-cp"/><arg value="src"/>
+			<!-- flags -->
+			<arg value="-D"/><arg value="phpModule"/>
+			<!-- build -js output -->
+			<arg value="-php"/><arg value="${bin}/php"/>
+		</exec>
+		<echo>Done!</echo>
+	</target>
+	
+	<target name="build-js">		
 		<exec executable="haxe" dir="${basedir}" failonerror="true">
 			<!-- use compiler service -->
 			<arg value="--connect"/><arg value="6000"/>
