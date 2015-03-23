@@ -4,14 +4,14 @@ pass:7
 fail:0
 error:0
 ignore:0
-time:0
+time:0.0549983978271484
 
 #coverage:percent,count/total
-coverage:24%
+coverage:34.15%
 packages:100%,1/1
-files:100%,2/2
-classes:100%,2/2
-methods:66.67%,6/9
-statements:44.44%,8/18
-branches:8.33%,2/24
-lines:77.73%,328/422
+files:100%,5/5
+classes:100%,5/5
+methods:51.72%,15/29
+statements:50%,27/54
+branches:14.75%,9/61
+lines:49.67%,529/1065

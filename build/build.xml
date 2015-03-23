@@ -10,12 +10,13 @@
 	<!-- run the munit tests -->
 	<target name="runTests">
 		<echo>Running ${projectName} tests...</echo>
-		<exec executable="haxelib" dir="test" failonerror="true">
+		<exec executable="haxelib" dir="${basedir}/test" failonerror="true">
 		  <arg value="run"/>
 		  <arg value="munit"/>
 		  <arg value="test"/>
 		  <arg value="-coverage"/>
-		  <arg value="-browser"/><arg value="phantomjs"/> 
+		  <arg value="-browser"/>
+		  <arg value="phantomjs"/> 
 		  <!--
 		  NOTE: I forked MUnit to add phantomjs as a browser target, you'll need to use that version for now if you want to run headless browser tests (js)
 		  https://github.com/mikedotalmond/MassiveUnit
@@ -53,16 +54,17 @@
 		<echo>Done!</echo>
 	</target>
 	
-	<target name="build-js">		
+	<target name="build-js">
 		<exec executable="haxe" dir="${basedir}" failonerror="true">
-			<!-- use compiler service -->
-			<arg value="--connect"/><arg value="6000"/>
 			<!-- main/document class -->
 			<arg value="-main"/><arg value="CartographyModuleMain"/>
 			<!-- classpaths -->
 			<arg value="-cp"/><arg value="src"/>
+			<!-- options -->
+			<arg value="-dce"/><arg value="full"/>
 			<!-- flags -->
 			<arg value="-D"/><arg value="jsModule"/>
+			<arg value="-D"/><arg value="analyzer"/>
 			<!-- build -js output -->
 			<arg value="-js"/><arg value="${bin}/${projectName}.js"/>
 		</exec>
@@ -80,8 +82,7 @@
 	
 	<target name="minify-js">
 		<exec executable="java" failonerror="true">
-		  <arg value="-jar"/><arg value="${buildTools}/closure-compiler.jar"/>
-		  <arg value="--jscomp_off"/><arg value="uselessCode"/>
+		  <arg value="-jar"/><arg value="${buildTools}/compiler.jar"/>
 		  <arg value="--js"/><arg value="${basedir}/bin/${projectName}.js"/>
 		  <arg value="--js_output_file"/><arg value="${basedir}/bin/${projectName}.min.js"/>
 		</exec>
