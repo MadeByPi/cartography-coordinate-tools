@@ -3,6 +3,32 @@
 	<!-- configuration -->		
 	<property file="${basedir}/build/build.properties" />
 	
+	<target name="install-libs">
+		<exec executable="haxelib" failonerror="true">
+			<arg value="git"/>
+			<arg value="munit"/>
+			<arg value="https://github.com/mikedotalmond/MassiveUnit.git"/>
+			<arg value="master"/>
+			<arg value="src"/>
+		</exec>
+		<exec executable="haxelib" failonerror="true">
+			<arg value="git"/>
+			<arg value="mlib"/>
+			<arg value="https://github.com/mikedotalmond/MassiveLib.git"/>
+			<arg value="master"/>
+			<arg value="src"/>
+		</exec>		
+		<exec executable="haxelib" failonerror="true">
+			<arg value="install"/>  
+			<arg value="mcover"/>  
+		</exec>		
+		<exec executable="haxelib" failonerror="true">
+			<arg value="install"/>  
+			<arg value="hxcpp"/>  
+		</exec>		
+	</target>
+	
+	
 	<target name="test-and-build" depends="runTests,build-js-module">
 		<echo>runTests and build-js-module completed</echo>
 	</target>
